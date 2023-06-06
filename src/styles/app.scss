@@ -36,7 +36,16 @@ body {
     justify-content: center;
     padding-top: 100px;
 
+    @media (max-width: 576px) {
+      .page-content {
+        width: 80% !important;
+      }
+    }
+
     .page-content {
+      width: 70%;
+      display: flex;
+
       button.btn-login {
         height: 40px;
         margin-top: 15px;
@@ -44,6 +53,8 @@ body {
       }
 
       .home-wrapper {
+        width: 100%;
+
         .user-info {
           text-align: center;
         }
@@ -53,6 +64,7 @@ body {
           width: 100%;
 
           input {
+            width: 100% !important;
             font-size: 13px;
           }
 
@@ -70,9 +82,11 @@ body {
       }
 
       .weather-report-wrapper {
+        width: 100%;
+
         .forecast-report-container {
-          width: 100%;
           display: flex;
+          justify-content: center;
           flex-direction: column;
           gap: 25px;
 
