@@ -1,6 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import { useAuth0 } from "@auth0/auth0-react";
+import { ToastContainer } from "react-toastify";
 import { Layout, Button } from "antd";
 import { BsCloudHazeFill } from "react-icons/bs";
 
@@ -43,6 +44,8 @@ export const PageLayout: React.FC<TPageLayoutProps> = (props) => {
           <div className="page-content">{props.children}</div>
         </Layout.Content>
       </Layout>
+
+      <ToastContainer theme="colored" />
     </React.Fragment>
   );
 };

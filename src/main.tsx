@@ -6,6 +6,7 @@ import APP_ROUTER from "~/router";
 import { getEnv } from "./config";
 import "antd/dist/reset.css";
 import "antd-css-utilities/utility.min.css";
+import "react-toastify/dist/ReactToastify.css";
 import "~/styles/app.scss";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

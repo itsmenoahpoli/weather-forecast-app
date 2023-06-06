@@ -4,6 +4,10 @@
   margin: 0;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background-color: #fcfcfc;
 }
@@ -30,11 +34,9 @@ body {
     height: 100%;
     display: flex;
     justify-content: center;
+    padding-top: 100px;
 
     .page-content {
-      padding: 0 20px;
-      margin-top: 150px;
-
       button.btn-login {
         height: 40px;
         margin-top: 15px;
@@ -48,16 +50,65 @@ body {
 
         form {
           margin-top: 30px;
-          width: 380px;
+          width: 100%;
 
           input {
             font-size: 13px;
           }
 
-          button {
-            margin-top: 10px;
-            height: 40px;
-            font-size: 13px;
+          .actions-container {
+            display: flex;
+            justify-content: center;
+
+            button {
+              margin-top: 10px;
+              height: 35px;
+              font-size: 13px;
+            }
+          }
+        }
+      }
+
+      .weather-report-wrapper {
+        .forecast-report-container {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 25px;
+
+          table {
+            width: 100%;
+            border: solid 1px #ccc;
+            border-radius: 8px;
+
+            tr th {
+              background-color: #eee;
+            }
+
+            tr th,
+            tr td {
+              height: 50px;
+              font-weight: 400;
+              text-align: left;
+              padding: 0 15px;
+              border: solid 1px #ccc;
+            }
+          }
+
+          @media (max-width: 576px) {
+            .hidden-in-mobile {
+              display: none !important;
+            }
+          }
+
+          .actions-container {
+            display: flex;
+            justify-content: flex-end;
+
+            button {
+              height: 45px;
+              font-size: 13px;
+            }
           }
         }
       }

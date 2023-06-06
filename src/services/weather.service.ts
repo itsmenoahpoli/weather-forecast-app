@@ -1,9 +1,10 @@
 import axios, { AxiosError } from "axios";
+import { toast } from "react-toastify";
 import { getEnv } from "~/config";
 import { useWeatherStore } from "~/store";
 
 export class WeatherService {
-  public static async getWeatherForecaseByCity(city: string) {
+  public static async getWeatherForecastByCity(city: string) {
     try {
       const apiUrl = `${getEnv("WEATHER_API_BASEURL")}?key=${getEnv(
         "WEATHER_API_KEY"
@@ -11,14 +12,13 @@ export class WeatherService {
 
       const response = await axios.get(apiUrl);
       const weatherStore = useWeatherStore.getState();
-      weatherStore.SET_CITY_FORECAST(response.data);
-      console.log(response.data);
-      console.log(weatherStore.cityForecast);
 
-      // window.location.href = "/weather";
+      weatherStore.SET_CITY_FORECAST(response.data);
+
+      return response;
     } catch (error) {
       if (error instanceof AxiosError) {
-        console.log(error);
+        toast.error(error.response?.data.error.message);
       }
     }
   }

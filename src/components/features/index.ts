@@ -6,4 +6,4 @@ export { UserProfileData } from "~/components/features/user-profile/UserProfileD
 /**
  * Weather Feature Components
  */
-export { SearchWeatherByCityForm } from "~/components/features/weather/SearchWeatherByCityForm";
+export { SearchWeatherForecastForm } from "~/components/features/weather/SearchWeatherForecastForm";

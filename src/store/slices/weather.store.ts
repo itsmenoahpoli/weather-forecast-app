@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 type WeatherStoreState = {
-  cityForecast: object | null;
+  cityForecast: any;
   SET_CITY_FORECAST: (forecast: object) => void;
   CLEAR_CITY_FORECAST: () => void;
 };
@@ -10,9 +10,8 @@ type WeatherStoreState = {
 export const useWeatherStore = create<WeatherStoreState>()(
   persist(
     (set) => ({
-      cityForecast: {},
+      cityForecast: null,
       SET_CITY_FORECAST: (forecast: object) => {
-        console.log("store", forecast);
         set(() => ({ cityForecast: forecast }));
       },
       CLEAR_CITY_FORECAST: () => {

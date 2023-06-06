@@ -2,11 +2,13 @@ import React from "react";
 import { Form, Input, Button } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 
-type TSearchWeatherByCityForm = {
+type TSearchWeatherForecastForm = {
   handleDisplayCityWeather: (city: string) => void;
 };
 
-export const SearchWeatherByCityForm: React.FC<TSearchWeatherByCityForm> = (props) => {
+export const SearchWeatherForecastForm: React.FC<TSearchWeatherForecastForm> = (
+  props
+) => {
   const [city, setCity] = React.useState<string>("");
 
   const onFormFinish = () => {
@@ -22,7 +24,11 @@ export const SearchWeatherByCityForm: React.FC<TSearchWeatherByCityForm> = (prop
         onChange={(e) => setCity(e.target.value)}
         required
       />
-      <Button htmlType="submit">Display Weather</Button>
+      <div className="actions-container">
+        <Button htmlType="submit" disabled={city.length < 1}>
+          Display Weather
+        </Button>
+      </div>
     </Form>
   );
 };
