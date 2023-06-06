@@ -8,15 +8,17 @@ export const WelcomePage: React.FC = () => {
 
   return (
     <PageLayout pageName="Welcome">
-      <h3>Hello World!</h3>
-      <p>
-        Welcome to the weather forecast web application. Please login with your Github
-        user to use the application and view weather in your city.
-      </p>
+      <div className="home-wrapper">
+        <h3>Hello World!</h3>
+        <p>
+          Welcome to the weather forecast web application. Please login with your Github
+          user to use the application and view weather in your city.
+        </p>
 
-      <Button className="btn-login" onClick={loginWithRedirect}>
-        Login
-      </Button>
+        <Button className="btn-login" onClick={loginWithRedirect}>
+          Login
+        </Button>
+      </div>
     </PageLayout>
   );
 };
