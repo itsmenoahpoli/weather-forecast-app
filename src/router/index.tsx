@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { WelcomePage, HomePage, WeatherPage } from "~/views";
+import { WelcomePage, HomePage, WeatherPage, ErrorPage } from "~/views";
 import { PrivateRoute } from "~/hoc";
 
 const APP_ROUTER = createBrowserRouter([
@@ -14,6 +14,10 @@ const APP_ROUTER = createBrowserRouter([
   {
     path: "/weather",
     element: <PrivateRoute children={<WeatherPage />} />,
+  },
+  {
+    path: "*",
+    element: <ErrorPage />,
   },
 ]);
 
